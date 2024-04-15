@@ -84,7 +84,7 @@ def get_data():
             '''
             logger.info(f"Sending query: {flux_query}")
 
-            table = query_api.query_data_frame(query=flux_query,org=os.environ['INFLUXDB_ORG'])
+            table = query_api.query_data_frame(query=flux_query,org=os.environ['INFLUXDB_ORG'],timeout=30_000)
 
             # Renaming time column to distinguish it from other timestamp types
             # table.rename(columns={'_time': 'original_time'}, inplace=True)
