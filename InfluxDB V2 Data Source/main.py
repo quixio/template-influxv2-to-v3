@@ -30,7 +30,7 @@ topic = app.topic(topic_name)
 
 influxdb2_client = influxdb_client.InfluxDBClient(token=os.environ["INFLUXDB_TOKEN"],
                         org=os.environ["INFLUXDB_ORG"],
-                        url=os.environ['INFLUXDB_HOST'])
+                        url=os.environ['INFLUXDB_HOST'],timeout=30_000)
 
 query_api = influxdb2_client.query_api()
 
@@ -84,7 +84,7 @@ def get_data():
             '''
             logger.info(f"Sending query: {flux_query}")
 
-            table = query_api.query_data_frame(query=flux_query,org=os.environ['INFLUXDB_ORG'],timeout=30_000)
+            table = query_api.query_data_frame(query=flux_query,org=os.environ['INFLUXDB_ORG'])
 
             # Renaming time column to distinguish it from other timestamp types
             # table.rename(columns={'_time': 'original_time'}, inplace=True)
