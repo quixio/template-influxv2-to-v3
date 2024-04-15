@@ -4,7 +4,7 @@ variables:
   - name: INFLUXDB_TAG_KEYS
     inputType: FreeText
     description: The names of tags to look for in the incoming data and retain when writing to InfluxDB V3
-    defaultValue: "['location','sensor-id']"
+    defaultValue: "['tag0','tag1','tag2']"
     required: false
   - name: INFLUXDB_HOST
     inputType: FreeText
