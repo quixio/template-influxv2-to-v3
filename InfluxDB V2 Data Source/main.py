@@ -10,12 +10,16 @@ from quixstreams import Application
 from quixstreams.models.serializers.quix import JSONSerializer, SerializationContext
 import influxdb_client
 
+# for local dev, load env vars from a .env file
+from dotenv import load_dotenv
+load_dotenv()
+
 # Initialize logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Create a Quix Application
-app = Application.Quix(consumer_group="influxdbv2_migrate", auto_create_topics=True)
+app = Application.Quix()
 
 # Define a serializer for messages, using JSON Serializer for ease
 serializer = JSONSerializer()
