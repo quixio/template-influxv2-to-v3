@@ -14,7 +14,7 @@ variables:
   - name: INFLUXDB_HOST
     inputType: FreeText
     description: ''
-    defaultValue: https://influxdb-production-0ff2.up.railway.app
+    defaultValue: https://3471-92-116-231-40.ngrok-free.app/
     required: true
   - name: task_interval
     inputType: FreeText
