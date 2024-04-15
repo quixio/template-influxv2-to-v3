@@ -19,7 +19,7 @@ variables:
   - name: INFLUXDB_DATABASE
     inputType: FreeText
     description: ''
-    defaultValue: connector-testing-sink
+    defaultValue: data_load_testing
     required: false
   - name: input
     inputType: InputTopic
