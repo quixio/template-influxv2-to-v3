@@ -35,7 +35,7 @@ deployments:
         inputType: FreeText
         description: ''
         required: false
-        value: 5m
+        value: 1y
       - name: INFLUXDB_BUCKET
         inputType: FreeText
         description: ''
